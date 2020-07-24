@@ -2,19 +2,20 @@ const nameEnter = document.querySelector(".nameEnter");
 const mylanguages = document.querySelector(".languages");
 const addGreetingsBtn = document.querySelector(".greetings");
 const message = document.querySelector(".message");
-
+const count = document.querySelector(".count");
+const listName = [];
 
  //const greet = greetings();
 
 addGreetingsBtn.addEventListener("click", function(){
-    //var removeName = nameEnter.value;
-    //removeName.innerHTML = ""; 
-    //alert("Donvulo")
+   if (!listName.includes(nameEnter.value) ){
+       listName.push(nameEnter.value)
+   }
     var checkedRadioBtn = document.querySelector("input[name='language']:checked"); 
     if (checkedRadioBtn){ 
     var language = checkedRadioBtn.value 
 }
-//alert(language)
+count.innerHTML = listName.length;
 if (language === "Swahili"){
     message.innerHTML = "Hujambo "+ nameEnter.value; 
 
